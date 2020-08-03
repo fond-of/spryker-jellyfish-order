@@ -1,6 +1,6 @@
 {
-  "name": "fond-of-spryker/jellyfish-order",
-  "description": "Jellyfish Order module.",
+  "name": "fond-of-spryker/jellyfish-sales-order",
+  "description": "JellyfishSalesOrder module.",
   "license": "MIT",
   "authors": [
     {

@@ -1,4 +1,4 @@
-namespace: fond-of-spryker/jellyfish-order
+namespace: fond-of-spryker/jellyfish-sales-order
 
 suites:
   unit:
