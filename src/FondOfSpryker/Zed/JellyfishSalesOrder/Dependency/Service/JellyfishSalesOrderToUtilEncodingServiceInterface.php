@@ -1,0 +1,10 @@
+<?php
+
+namespace FondOfSpryker\Zed\JellyfishSalesOrder\Dependency\Service;
+
+use FondOfSpryker\Zed\Jellyfish\Dependency\Service\JellyfishToUtilEncodingServiceInterface as FondOfSprykerJellyfishToUtilEncodingServiceInterface;
+
+interface JellyfishSalesOrderToUtilEncodingServiceInterface extends FondOfSprykerJellyfishToUtilEncodingServiceInterface
+{
+
+}
