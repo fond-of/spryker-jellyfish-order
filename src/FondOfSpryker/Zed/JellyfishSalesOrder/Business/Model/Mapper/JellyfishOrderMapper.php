@@ -114,7 +114,7 @@ class JellyfishOrderMapper implements JellyfishOrderMapperInterface
         SpySalesOrder $salesOrder
     ) : JellyfishOrderTransfer {
         foreach ($this->jellyfishOrderExpanderPostMapPlugins as $jellyfishOrderExpanderPostMapPlugin) {
-            $jellyfishOrderTransfer = $jellyfishOrderExpanderPostMapPlugin->expand($jellyfishOrder, $salesOrder);
+            $jellyfishOrderTransfer = $jellyfishOrderExpanderPostMapPlugin->expand($jellyfishOrderTransfer, $salesOrder);
         }
 
         return $jellyfishOrderTransfer;
