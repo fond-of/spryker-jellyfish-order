@@ -10,7 +10,7 @@
   ],
   "require": {
     "php": ">=7.1",
-    "fond-of-spryker/jellyfish": "dev-master"
+    "fond-of-spryker/jellyfish": "dev-feature/refractoring-remove-order-export"
   },
   "require-dev": {
     "spryker/code-sniffer": "^0.12",
