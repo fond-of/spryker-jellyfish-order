@@ -18,6 +18,5 @@ class SalesOrderExporterTest extends Unit
     protected function _before(): void
     {
         $this->salesOrderExporter = new SalesOrderExporter();
-
     }
 }

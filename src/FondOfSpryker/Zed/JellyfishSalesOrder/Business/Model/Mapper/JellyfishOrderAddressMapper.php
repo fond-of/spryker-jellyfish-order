@@ -51,12 +51,12 @@ class JellyfishOrderAddressMapper implements JellyfishOrderAddressMapperInterfac
      *
      * @return \Generated\Shared\Transfer\JellyfishOrderAddressTransfer
      */
-    protected function  expandOrderAddressTransfer(
+    protected function expandOrderAddressTransfer(
         JellyfishOrderAddressTransfer $jellyfishOrderAddressTransfer,
         SpySalesOrderAddress $salesOrderAddress
-    ) : JellyfishOrderAddressTransfer {
+    ): JellyfishOrderAddressTransfer {
         foreach ($this->jellyfishOrderAddressExpanderPostMapPlugins as $jellyfishOrderAddressExpanderPostMapPlugin) {
-            $jellyfishOrderAddressTransfer = $jellyfishOrderAddressExpanderPostMapPlugin->expand( $jellyfishOrderAddressTransfer, $salesOrderAddress);
+            $jellyfishOrderAddressTransfer = $jellyfishOrderAddressExpanderPostMapPlugin->expand($jellyfishOrderAddressTransfer, $salesOrderAddress);
         }
 
         return $jellyfishOrderAddressTransfer;

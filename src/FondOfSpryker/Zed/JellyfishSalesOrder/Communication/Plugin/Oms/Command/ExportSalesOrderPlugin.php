@@ -9,6 +9,7 @@ use Spryker\Zed\Oms\Dependency\Plugin\Command\CommandByOrderInterface;
 
 /**
  * @method \FondOfSpryker\Zed\JellyfishSalesOrder\Business\JellyfishSalesOrderFacadeInterface getFacade()
+ * @method \FondOfSpryker\Zed\JellyfishSalesOrder\JellyfishSalesOrderConfig getConfig()
  */
 class ExportSalesOrderPlugin extends AbstractPlugin implements CommandByOrderInterface
 {

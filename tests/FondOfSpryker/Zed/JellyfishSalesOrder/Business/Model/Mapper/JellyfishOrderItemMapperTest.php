@@ -45,7 +45,7 @@ class JellyfishOrderItemMapperTest extends Unit
             'getPriceToPayAggregation' => 1990,
             'tax_amount' => 250,
             'discount_amount_aggregation' => 0,
-            'discount_amount_full_aggregation' => 0
+            'discount_amount_full_aggregation' => 0,
         ];
 
         $this->spySalesOrderItemMock->expects($this->atLeastOnce())
@@ -83,7 +83,6 @@ class JellyfishOrderItemMapperTest extends Unit
         $this->spySalesOrderItemMock->expects($this->atLeastOnce())
             ->method('getDiscountAmountFullAggregation')
             ->willReturn($data['discount_amount_full_aggregation']);
-
 
         $jellyfishOrderItemTransfer = $this->jellyfishOrderItemMapper->fromSalesOrderItem($this->spySalesOrderItemMock);
 

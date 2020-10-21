@@ -2,8 +2,8 @@
 
 namespace FondOfSpryker\Zed\JellyfishSalesOrder\Communication\Plugin;
 
-use DateTime;
 use Codeception\Test\Unit;
+use DateTime;
 use FondOfSpryker\Zed\JellyfishSalesOrder\Business\Model\Mapper\JellyfishOrderAddressMapperInterface;
 use FondOfSpryker\Zed\JellyfishSalesOrder\Business\Model\Mapper\JellyfishOrderDiscountMapperInterface;
 use FondOfSpryker\Zed\JellyfishSalesOrder\Business\Model\Mapper\JellyfishOrderExpenseMapperInterface;
@@ -143,7 +143,7 @@ class JellyfishOrderMapperTest extends Unit
             'currency_iso_code' => 'EUR',
             'store' => 'default',
             'locale' => 'en_US',
-            'created_at' => new DateTime()
+            'created_at' => new DateTime(),
         ];
 
         $this->spySalesOrderMock->expects($this->atLeastOnce())

@@ -2,12 +2,10 @@
 
 namespace FondOfSpryker\Zed\JellyfishSalesOrder\Business;
 
-use FondOfSpryker\Zed\Jellyfish\Business\Api\Adapter\AdapterInterface;
 use FondOfSpryker\Zed\JellyfishSalesOrder\Business\Api\Adapter\SalesOrderAdapter;
 use FondOfSpryker\Zed\JellyfishSalesOrder\Business\Api\Adapter\SalesOrderAdapterInterface;
-use FondOfSpryker\Zed\JellyfishSalesOrder\Business\Model\Exporter\OrderExporterInterface;
-use FondOfSpryker\Zed\JellyfishSalesOrder\Business\Model\Mapper\JellyfishAddressMapper;
-use FondOfSpryker\Zed\JellyfishSalesOrder\Business\Model\Mapper\JellyfishAddressMapperInterface;
+use FondOfSpryker\Zed\JellyfishSalesOrder\Business\Model\Exporter\SalesOrderExporter;
+use FondOfSpryker\Zed\JellyfishSalesOrder\Business\Model\Exporter\SalesOrderExporterInterface;
 use FondOfSpryker\Zed\JellyfishSalesOrder\Business\Model\Mapper\JellyfishOrderAddressMapper;
 use FondOfSpryker\Zed\JellyfishSalesOrder\Business\Model\Mapper\JellyfishOrderAddressMapperInterface;
 use FondOfSpryker\Zed\JellyfishSalesOrder\Business\Model\Mapper\JellyfishOrderDiscountMapper;
@@ -23,10 +21,6 @@ use FondOfSpryker\Zed\JellyfishSalesOrder\Business\Model\Mapper\JellyfishOrderPa
 use FondOfSpryker\Zed\JellyfishSalesOrder\Business\Model\Mapper\JellyfishOrderTotalsMapper;
 use FondOfSpryker\Zed\JellyfishSalesOrder\Business\Model\Mapper\JellyfishOrderTotalsMapperInterface;
 use FondOfSpryker\Zed\JellyfishSalesOrder\Dependency\Service\JellyfishSalesOrderToUtilEncodingServiceInterface;
-use FondOfSpryker\Zed\JellyfishSalesOrder\Dependency\Service\JellyfishToUtilEncodingServiceInterface;
-use FondOfSpryker\Zed\JellyfishSalesOrder\JellyfishDependencyProvider;
-use FondOfSpryker\Zed\JellyfishSalesOrder\Business\Model\Exporter\SalesOrderExporter;
-use FondOfSpryker\Zed\JellyfishSalesOrder\Business\Model\Exporter\SalesOrderExporterInterface;
 use FondOfSpryker\Zed\JellyfishSalesOrder\JellyfishSalesOrderDependencyProvider;
 use GuzzleHttp\Client as HttpClient;
 use GuzzleHttp\ClientInterface as HttpClientInterface;
@@ -78,8 +72,6 @@ class JellyfishSalesOrderBusinessFactory extends AbstractBusinessFactory
 
     /**
      * @return \FondOfSpryker\Zed\JellyfishSalesOrder\Business\Model\Mapper\JellyfishOrderAddressMapperInterface
-     *
-     * @throws \Spryker\Zed\Kernel\Exception\Container\ContainerKeyNotFoundException
      */
     protected function createJellyfishOrderAddressMapper(): JellyfishOrderAddressMapperInterface
     {
@@ -132,8 +124,6 @@ class JellyfishSalesOrderBusinessFactory extends AbstractBusinessFactory
 
     /**
      * @return \FondOfSpryker\Zed\JellyfishSalesOrder\Business\Api\Adapter\SalesOrderAdapterInterface
-     * 
-     * @throws \Spryker\Zed\Kernel\Exception\Container\ContainerKeyNotFoundException
      */
     protected function createSalesOrderAdapter(): SalesOrderAdapterInterface
     {
@@ -146,8 +136,6 @@ class JellyfishSalesOrderBusinessFactory extends AbstractBusinessFactory
 
     /**
      * @return \FondOfSpryker\Zed\JellyfishSalesOrder\Dependency\Service\JellyfishSalesOrderToUtilEncodingServiceInterface
-     *
-     * @throws \Spryker\Zed\Kernel\Exception\Container\ContainerKeyNotFoundException
      */
     protected function getUtilEncodingService(): JellyfishSalesOrderToUtilEncodingServiceInterface
     {
@@ -156,8 +144,6 @@ class JellyfishSalesOrderBusinessFactory extends AbstractBusinessFactory
 
     /**
      * @return \FondOfSpryker\Zed\JellyfishSalesOrderExtension\Dependency\Plugin\JellyfishOrderAddressExpanderPostMapPluginInterface[]
-     *
-     * @throws \Spryker\Zed\Kernel\Exception\Container\ContainerKeyNotFoundException
      */
     protected function getOrderExpanderPostMapPlugins(): array
     {
@@ -166,8 +152,6 @@ class JellyfishSalesOrderBusinessFactory extends AbstractBusinessFactory
 
     /**
      * @return \FondOfSpryker\Zed\JellyfishSalesOrderExtension\Dependency\Plugin\JellyfishOrderAddressExpanderPostMapPluginInterface[]
-     *
-     * @throws \Spryker\Zed\Kernel\Exception\Container\ContainerKeyNotFoundException
      */
     protected function getOrderItemExpanderPostMapPlugins(): array
     {
@@ -176,8 +160,6 @@ class JellyfishSalesOrderBusinessFactory extends AbstractBusinessFactory
 
     /**
      * @return \FondOfSpryker\Zed\JellyfishSalesOrderExtension\Dependency\Plugin\JellyfishOrderAddressExpanderPostMapPluginInterface[]
-     *
-     * @throws \Spryker\Zed\Kernel\Exception\Container\ContainerKeyNotFoundException
      */
     protected function getOrderAddressExpanderPostMapPlugins(): array
     {

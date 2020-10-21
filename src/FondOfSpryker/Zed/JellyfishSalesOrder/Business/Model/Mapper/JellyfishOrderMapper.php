@@ -109,10 +109,10 @@ class JellyfishOrderMapper implements JellyfishOrderMapperInterface
      *
      * @return \Generated\Shared\Transfer\JellyfishOrderTransfer
      */
-    protected function  expandOrderTransfer(
+    protected function expandOrderTransfer(
         JellyfishOrderTransfer $jellyfishOrderTransfer,
         SpySalesOrder $salesOrder
-    ) : JellyfishOrderTransfer {
+    ): JellyfishOrderTransfer {
         foreach ($this->jellyfishOrderExpanderPostMapPlugins as $jellyfishOrderExpanderPostMapPlugin) {
             $jellyfishOrderTransfer = $jellyfishOrderExpanderPostMapPlugin->expand($jellyfishOrderTransfer, $salesOrder);
         }

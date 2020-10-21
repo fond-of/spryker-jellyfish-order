@@ -25,7 +25,6 @@ class JellyfishOrderAddressMapperTest extends Unit
      */
     protected $spyCountryMock;
 
-
     /**
      * @return void
      */
@@ -57,7 +56,7 @@ class JellyfishOrderAddressMapperTest extends Unit
             'city' => 'Berlin',
             'zipcode' => '10119',
             'phone' => '555-55551',
-            'country' => 'DE'
+            'country' => 'DE',
         ];
 
         $this->spySalesOrderAddressMock->expects($this->atLeastOnce())
