@@ -51,7 +51,7 @@ class JellyfishOrderTotalsMapperTest extends Unit
             'discount_total' => 0,
             'tax_total' => 240,
             'subtotal' => 1000,
-            'grandtotal' => 1990
+            'grandtotal' => 1990,
         ];
         $this->spySalesOrderMock->expects($this->atLeastOnce())
             ->method('getLastOrderTotals')
@@ -85,6 +85,5 @@ class JellyfishOrderTotalsMapperTest extends Unit
         $this->assertEquals($data['tax_total'], $jellyfishOrderTotalsTransfer->getTaxTotal());
         $this->assertEquals($data['subtotal'], $jellyfishOrderTotalsTransfer->getSubtotal());
         $this->assertEquals($data['grandtotal'], $jellyfishOrderTotalsTransfer->getGrandTotal());
-
     }
 }

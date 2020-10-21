@@ -2,7 +2,6 @@
 
 namespace FondOfSpryker\Zed\JellyfishSalesOrder;
 
-use FondOfSpryker\Zed\Jellyfish\Dependency\Service\JellyfishToUtilEncodingServiceBridge;
 use FondOfSpryker\Zed\JellyfishSalesOrder\Dependency\Service\JellyfishSalesOrderToUtilEncodingServiceBridge;
 use Spryker\Zed\Kernel\AbstractBundleDependencyProvider;
 use Spryker\Zed\Kernel\Container;
@@ -13,7 +12,6 @@ class JellyfishSalesOrderDependencyProvider extends AbstractBundleDependencyProv
     public const PLUGINS_JELLYFISH_ORDER_EXPANDER_POST_MAP = 'PLUGINS_JELLYFISH_ORDER_EXPANDER_POST_MAP';
     public const PLUGINS_JELLYFISH_ORDER_ITEM_EXPANDER_POST_MAP = 'PLUGINS_JELLYFISH_ORDER_ITEM_EXPANDER_POST_MAP';
     public const PLUGINS_JELLYFISH_ORDER_ADDRESS_EXPANDER_POST_MAP = 'PLUGINS_JELLYFISH_ORDER_ADDRESS_EXPANDER_POST_MAP';
-
 
     /**
      * @param \Spryker\Zed\Kernel\Container $container
@@ -45,7 +43,7 @@ class JellyfishSalesOrderDependencyProvider extends AbstractBundleDependencyProv
 
         return $container;
     }
-    
+
     /**
      * @param \Spryker\Zed\Kernel\Container $container
      *
@@ -74,6 +72,11 @@ class JellyfishSalesOrderDependencyProvider extends AbstractBundleDependencyProv
         return $container;
     }
 
+    /**
+     * @param \Spryker\Zed\Kernel\Container $container
+     *
+     * @return \Spryker\Zed\Kernel\Container
+     */
     protected function addJellyfishOrderAddressExpanderPostMapPlugins(Container $container): Container
     {
         $container[static::PLUGINS_JELLYFISH_ORDER_ADDRESS_EXPANDER_POST_MAP] = function (Container $container) {
@@ -84,7 +87,7 @@ class JellyfishSalesOrderDependencyProvider extends AbstractBundleDependencyProv
     }
 
     /**
-     * @return \FondOfSpryker\Zed\JellyfishSalesOrderExtension\Dependency\Plugin\JellyfishOrderItemExpanderPostMapPluginInterface[]
+     * @return \FondOfSpryker\Zed\JellyfishExtension\Dependency\Plugin\JellyfishOrderItemExpanderPostMapPluginInterface[]
      */
     protected function getJellyfishOrderItemExpanderPostMapPlugins(): array
     {
@@ -92,7 +95,7 @@ class JellyfishSalesOrderDependencyProvider extends AbstractBundleDependencyProv
     }
 
     /**
-     * @return \FondOfSpryker\Zed\JellyfishSalesOrderExtension\Dependency\Plugin\JellyfishOrderExpanderPostMapPluginInterface[]
+     * @return \FondOfSpryker\Zed\JellyfishExtension\Dependency\Plugin\JellyfishOrderExpanderPostMapPluginInterface[]
      */
     protected function getJellyfishOrderExpanderPostMapPlugins(): array
     {
@@ -106,5 +109,4 @@ class JellyfishSalesOrderDependencyProvider extends AbstractBundleDependencyProv
     {
         return [];
     }
-
 }

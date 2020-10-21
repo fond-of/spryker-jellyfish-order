@@ -2,9 +2,7 @@
 
 namespace FondOfSpryker\Zed\JellyfishSalesOrder\Business\Api\Adapter;
 
-use FondOfSpryker\Zed\JellyfishSalesOrder\Dependency\Service\JellyfishToUtilEncodingServiceInterface;
 use FondOfSpryker\Zed\Jellyfish\Business\Api\Adapter\AbstractAdapter as FondOfSprykerJellyfishAbstractAdapter;
-use GuzzleHttp\ClientInterface;
 use Psr\Http\Message\ResponseInterface;
 use Spryker\Shared\Kernel\Transfer\AbstractTransfer;
 

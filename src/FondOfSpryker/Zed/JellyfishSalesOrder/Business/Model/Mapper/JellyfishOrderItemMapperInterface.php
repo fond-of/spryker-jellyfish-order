@@ -9,7 +9,7 @@ interface JellyfishOrderItemMapperInterface
 {
     /**
      * @param \Orm\Zed\Sales\Persistence\SpySalesOrderItem $salesOrderItem
-     * 
+     *
      * @return \Generated\Shared\Transfer\JellyfishOrderItemTransfer
      */
     public function fromSalesOrderItem(SpySalesOrderItem $salesOrderItem): JellyfishOrderItemTransfer;

@@ -41,7 +41,7 @@ class JellyfishOrderExpenseMapperTest extends Unit
             'name' => 'default',
             'tax_rate' => 19,
             'price' => 1990,
-            'tax_amount' => 250
+            'tax_amount' => 250,
         ];
 
         $this->spySalesExpenseMock->expects($this->atLeastOnce())

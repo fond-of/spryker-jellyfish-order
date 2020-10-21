@@ -6,5 +6,4 @@ use FondOfSpryker\Zed\Jellyfish\Business\Api\Adapter\AdapterInterface as FondOfS
 
 interface SalesOrderAdapterInterface extends FondOfSprykerAdapterInterface
 {
-
 }

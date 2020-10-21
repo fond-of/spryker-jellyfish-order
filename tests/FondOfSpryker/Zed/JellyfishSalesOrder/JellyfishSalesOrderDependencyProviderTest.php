@@ -3,7 +3,6 @@
 namespace FondOfSpryker\Zed\JellyfishSalesOrder;
 
 use Codeception\Test\Unit;
-use FondOfSpryker\Zed\BrandCompany\Business\BrandCompanyFacadeInterface;
 use FondOfSpryker\Zed\JellyfishSalesOrder\Dependency\Service\JellyfishSalesOrderToUtilEncodingServiceBridge;
 use Spryker\Service\UtilEncoding\UtilEncodingServiceInterface;
 use Spryker\Shared\Kernel\BundleProxy;

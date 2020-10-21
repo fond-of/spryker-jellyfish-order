@@ -3,7 +3,7 @@
 namespace FondOfSpryker\Zed\JellyfishSalesOrder\Business\Model\Exporter;
 
 use ArrayObject;
-use FondOfSpryker\Zed\JellyfishSalesOrder\Business\Api\Adapter\AdapterInterface;
+use Exception;
 use FondOfSpryker\Zed\JellyfishSalesOrder\Business\Api\Adapter\SalesOrderAdapterInterface;
 use FondOfSpryker\Zed\JellyfishSalesOrder\Business\Model\Mapper\JellyfishOrderItemMapperInterface;
 use FondOfSpryker\Zed\JellyfishSalesOrder\Business\Model\Mapper\JellyfishOrderMapperInterface;
@@ -31,8 +31,6 @@ class SalesOrderExporter implements SalesOrderExporterInterface
     protected $adapter;
 
     /**
-     * SalesOrderExporter constructor.
-     *
      * @param \FondOfSpryker\Zed\JellyfishSalesOrder\Business\Model\Mapper\JellyfishOrderMapperInterface $jellyfishOrderMapper
      * @param \FondOfSpryker\Zed\JellyfishSalesOrder\Business\Model\Mapper\JellyfishOrderItemMapperInterface $jellyfishOrderItemMapper
      * @param \FondOfSpryker\Zed\JellyfishSalesOrder\Business\Api\Adapter\SalesOrderAdapterInterface $adapter
@@ -41,8 +39,7 @@ class SalesOrderExporter implements SalesOrderExporterInterface
         JellyfishOrderMapperInterface $jellyfishOrderMapper,
         JellyfishOrderItemMapperInterface $jellyfishOrderItemMapper,
         SalesOrderAdapterInterface $adapter
-    )
-    {
+    ) {
         $this->jellyfishOrderMapper = $jellyfishOrderMapper;
         $this->jellyfishOrderItemMapper = $jellyfishOrderItemMapper;
         $this->adapter = $adapter;
@@ -50,7 +47,9 @@ class SalesOrderExporter implements SalesOrderExporterInterface
 
     /**
      * @param \Orm\Zed\Sales\Persistence\SpySalesOrder $salesOrderEntity
-     * @param \Orm\Zed\Sales\Persistence\SpySalesOrderItem[] $salesOrderItems
+     * @param array $salesOrderItems
+     *
+     * @throws \Exception
      *
      * @return void
      */
@@ -59,12 +58,16 @@ class SalesOrderExporter implements SalesOrderExporterInterface
         try {
             $jellyfishOrderTransfer = $this->map($salesOrderEntity, $salesOrderItems);
             $this->adapter->sendRequest($jellyfishOrderTransfer);
-        } catch (\Exception $exception) {
-            $this->getLogger()->error(sprintf('Order %s could not be exported to JellyFish! Message: %s',
-                $salesOrderEntity->getIdSalesOrder(),
-                $exception->getMessage()),
+        } catch (Exception $exception) {
+            $this->getLogger()->error(
+                sprintf(
+                    'Order %s could not be exported to JellyFish! Message: %s',
+                    $salesOrderEntity->getIdSalesOrder(),
+                    $exception->getMessage()
+                ),
                 $exception->getTrace()
             );
+
             throw $exception;
         }
     }

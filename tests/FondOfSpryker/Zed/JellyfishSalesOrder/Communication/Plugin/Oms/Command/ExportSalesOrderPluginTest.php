@@ -47,7 +47,6 @@ class ExportSalesOrderPluginTest extends Unit
             ->disableOriginalConstructor()
             ->getMock();
 
-
         $this->exportSalesOrderPlugin = new class (
             $this->jellyfishSalesOrderFacadeMock
         ) extends ExportSalesOrderPlugin {
@@ -58,6 +57,7 @@ class ExportSalesOrderPluginTest extends Unit
 
             /**
              *  constructor.
+             *
              * @param \FondOfSpryker\Zed\JellyfishSalesOrder\Business\JellyfishSalesOrderFacadeInterface $jellyfishSalesOrderFacade
              */
             public function __construct(JellyfishSalesOrderFacadeInterface $jellyfishSalesOrderFacade)
@@ -73,7 +73,6 @@ class ExportSalesOrderPluginTest extends Unit
                 return $this->jellyfishSalesOrderFacade;
             }
         };
-
     }
 
     /**

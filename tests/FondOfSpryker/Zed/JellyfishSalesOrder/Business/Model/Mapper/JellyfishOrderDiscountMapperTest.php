@@ -62,9 +62,9 @@ class JellyfishOrderDiscountMapperTest extends Unit
             'description' => 'discount newsletter',
             'amount' => 1000,
             'quantity' => 1,
-            'codes' => array(
-                $this->spySalesDiscountCodeMock
-            )
+            'codes' => [
+                $this->spySalesDiscountCodeMock,
+            ],
         ];
 
         $this->spySalesDiscountMock->expects($this->atLeastOnce())

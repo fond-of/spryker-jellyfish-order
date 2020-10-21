@@ -3,10 +3,8 @@
 namespace FondOfSpryker\Zed\JellsfishSalesOrder\Business;
 
 use Codeception\Test\Unit;
-use FondOfSpryker\Zed\CompanyUserReference\CompanyUserReferenceConfig;
 use FondOfSpryker\Zed\JellyfishSalesOrder\Business\JellyfishSalesOrderBusinessFactory;
 use FondOfSpryker\Zed\JellyfishSalesOrder\Business\Model\Exporter\SalesOrderExporter;
-use FondOfSpryker\Zed\JellyfishSalesOrder\Business\Model\Exporter\SalesOrderExporterInterface;
 use FondOfSpryker\Zed\JellyfishSalesOrder\Dependency\Service\JellyfishSalesOrderToUtilEncodingServiceInterface;
 use FondOfSpryker\Zed\JellyfishSalesOrder\JellyfishSalesOrderConfig;
 use FondOfSpryker\Zed\JellyfishSalesOrder\JellyfishSalesOrderDependencyProvider;
@@ -78,7 +76,6 @@ class JellyfishSalesOrderBusinessFactoryTest extends Unit
                 [],
                 $this->jellyfishSalesOrderToUtilEncodingServiceMock
             );
-
 
         $this->jellyfishSalesOrderConfigMock->expects($this->atLeastOnce())
             ->method('getSystemCode')

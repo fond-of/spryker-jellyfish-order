@@ -58,10 +58,10 @@ class JellyfishOrderItemMapper implements JellyfishOrderItemMapperInterface
      *
      * @return \Generated\Shared\Transfer\JellyfishOrderItemTransfer
      */
-    protected function  expandOrderItemTransfer(
+    protected function expandOrderItemTransfer(
         JellyfishOrderItemTransfer $jellyfishOrderItemTransfer,
         SpySalesOrderItem $salesOrderItem
-    ) : JellyfishOrderItemTransfer {
+    ): JellyfishOrderItemTransfer {
         foreach ($this->jellyfishOrderItemExpanderPostMapPlugins as $jellyfishOrderItemExpanderPostMapPlugin) {
             $jellyfishOrderItemTransfer = $jellyfishOrderItemExpanderPostMapPlugin->expand($jellyfishOrderItemTransfer, $salesOrderItem);
         }

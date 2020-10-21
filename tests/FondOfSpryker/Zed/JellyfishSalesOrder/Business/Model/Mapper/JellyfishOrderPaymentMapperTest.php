@@ -49,7 +49,7 @@ class JellyfishOrderPaymentMapperTest extends Unit
         $data = [
             'amount' => 19.90,
             'payment_method' => 'creditcard',
-            'payment_provider' => 'provider'
+            'payment_provider' => 'provider',
         ];
 
         $this->spySalesPaymentMock->expects($this->atLeastOnce())

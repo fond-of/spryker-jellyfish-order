@@ -2,7 +2,6 @@
 
 namespace FondOfSpryker\Zed\JellyfishSalesOrder\Business\Model\Mapper;
 
-use Generated\Shared\Transfer\JellyfishAddressTransfer;
 use Generated\Shared\Transfer\JellyfishOrderAddressTransfer;
 use Orm\Zed\Sales\Persistence\SpySalesOrderAddress;
 

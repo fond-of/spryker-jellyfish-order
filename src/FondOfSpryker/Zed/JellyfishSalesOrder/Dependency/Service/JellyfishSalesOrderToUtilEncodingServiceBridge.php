@@ -6,5 +6,4 @@ use FondOfSpryker\Zed\Jellyfish\Dependency\Service\JellyfishToUtilEncodingServic
 
 class JellyfishSalesOrderToUtilEncodingServiceBridge extends FondOfSprykerJellyfishToUtilEncodingServiceBridge implements JellyfishSalesOrderToUtilEncodingServiceInterface
 {
-
 }
