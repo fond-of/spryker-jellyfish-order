@@ -118,12 +118,12 @@ class SalesOrderExporter implements SalesOrderExporterInterface
             $index = $groupKeyIndexMapping->offsetGet($groupKey);
             $currentJellyfishOrderItem = $jellyfishOrderItems->offsetGet($index);
 
-            $currentJellyfishOrderItem->setQuantity($currentJellyfishOrderItem->getQuantity() + $jellyfishOrderItem->getQuantity())
-                ->setSumTaxAmount($currentJellyfishOrderItem->getSumTaxAmount() + $jellyfishOrderItem->getSumTaxAmount())
-                ->setSumPrice($currentJellyfishOrderItem->getSumPrice() + $jellyfishOrderItem->getSumPrice())
-                ->setSumPriceToPayAggregation($currentJellyfishOrderItem->getSumPriceToPayAggregation() + $jellyfishOrderItem->getSumPriceToPayAggregation())
-                ->setSumDiscountAmountAggregation($currentJellyfishOrderItem->getSumDiscountAmountAggregation() + $jellyfishOrderItem->getSumDiscountAmountAggregation())
-                ->setSumDiscountAmountFullAggregation($currentJellyfishOrderItem->getSumDiscountAmountFullAggregation() + $jellyfishOrderItem->getSumDiscountAmountFullAggregation());
+            $currentJellyfishOrderItem->setQuantity($currentJellyfishOrderItem->getQuantity() + $jellyfishOrderItemTransfer->getQuantity())
+                ->setSumTaxAmount($currentJellyfishOrderItem->getSumTaxAmount() + $jellyfishOrderItemTransfer->getSumTaxAmount())
+                ->setSumPrice($currentJellyfishOrderItem->getSumPrice() + $jellyfishOrderItemTransfer->getSumPrice())
+                ->setSumPriceToPayAggregation($currentJellyfishOrderItem->getSumPriceToPayAggregation() + $jellyfishOrderItemTransfer->getSumPriceToPayAggregation())
+                ->setSumDiscountAmountAggregation($currentJellyfishOrderItem->getSumDiscountAmountAggregation() + $jellyfishOrderItemTransfer->getSumDiscountAmountAggregation())
+                ->setSumDiscountAmountFullAggregation($currentJellyfishOrderItem->getSumDiscountAmountFullAggregation() + $jellyfishOrderItemTransfer->getSumDiscountAmountFullAggregation());
         }
 
         return $jellyfishOrderItems;
