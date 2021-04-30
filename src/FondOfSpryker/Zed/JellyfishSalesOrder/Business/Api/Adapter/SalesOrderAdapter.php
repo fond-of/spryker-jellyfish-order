@@ -14,6 +14,7 @@ class SalesOrderAdapter extends FondOfSprykerJellyfishAbstractAdapter implements
 
     protected const VALID_CODES = [
         Response::HTTP_OK,
+        Response::HTTP_CREATED,
         Response::HTTP_ACCEPTED
     ];
 
